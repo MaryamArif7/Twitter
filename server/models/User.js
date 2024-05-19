@@ -1,5 +1,7 @@
 import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
+/*Route handlers or controllers interact with the Model to perform business logic,
+ such as querying or updating data in the database. */
 const UserSchema =new mongoose.Schema(
 {
     firstName:{
@@ -49,5 +51,6 @@ const UserSchema =new mongoose.Schema(
 {
 Timestamps:true}
 );
+/* User modal name and UserSchema is schema name */
 const User=mongoose.model("User",UserSchema);
 export default User;
