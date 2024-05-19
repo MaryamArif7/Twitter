@@ -22,12 +22,21 @@ import { users,posts} from "./data/index.js";
 const __filenme=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filenme);
 dotenv.config();
+// app.use is a method used to mount middleware functions at a specified path. 
+//middlewre fun has access to req and res objects ,it has path and midleware function"next" what next handles should be
 const app =express();
 app.use(express.json());
+//Helmet is a security middleware that protects Express.js apps by setting various HTTP headers
+//when we open the network tab w can see the detail about our app ,by using this middleware we can protect 
+//our appliaction from unwanted attacks and vulnerablities ,we can see they wil eb turned off in the headers
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({policy:"cross-origin"}));
+//morgan is an HTTP request logger middleware for Node.js that generates logs for each API reques
+//common, a standard Apache common log output.
 app.use(morgan("common"));
 app.use(bodyParser.json({limit:"30mb",extended:true}));
+//a very useful middleware ,when we are working with full stack application ,we need this 
+//to send req from frontend to backend
 app.use(cors());
 app.use("/assets",express.static(path.join(__dirname,'public/assets')));
 /* file storage */
