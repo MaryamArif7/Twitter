@@ -1,4 +1,3 @@
-
 import { BrowserRouter,Navigate,Routes,Route } from "react-router-dom";
 import HomePage from 'scenes/homePage';
 import LoginPage from "scenes/loginPage";
@@ -6,17 +5,14 @@ import ProfilePage from "scenes/profilePage";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-
 import { createTheme } from "@mui/material";
 import { themeSettings } from "./theme";
-import state from "state";
 function App() {
   const mode =useSelector((state)=>state.mode);//helps to ggrab the state
 const theme=useMemo(()=>createTheme(themeSettings(mode)),[mode]);
 const isAuth=Boolean(useSelector((state)=>state.token));
   return (
     <div className="App">
-      
     <BrowserRouter>
     <ThemeProvider theme={theme}>
       <CssBaseline /> 
@@ -30,5 +26,4 @@ const isAuth=Boolean(useSelector((state)=>state.token));
     </div>
   );
 }
-
 export default App;
