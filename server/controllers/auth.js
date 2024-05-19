@@ -2,7 +2,8 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
-
+/*The Controller acts as an intermediary between the Model and the View. 
+It handles user requests, processes input, and interacts with the Model to perform business logic. */
 /* Register user */
 export const register = async (req, res) => {
   try {
