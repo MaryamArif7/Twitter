@@ -2,6 +2,7 @@ import User from "../models/User.js";
 
 export const getUser = async (req, res) => {
   try {
+    //req.params to extract route parameters such as the user ID
     const { id } = req.params;
     const user = await User.findById(id);
     res.status(200).json(user);
