@@ -20,7 +20,17 @@ import {
     const dark = palette.neutral.dark;
     const medium = palette.neutral.medium;
     const main = palette.neutral.main;
-  
+  /*clearning :
+  1>when the component first rerender the user is set to nll
+  ->useRffect will run after this ,then getUser mounts because of useEffect
+  ->the getUser fetches the data from the user 
+  ->after fetching the data is fetched setData updates the satate .
+  ->when hte setUser is called it update the state with new user data,then componnet 
+  will rerender again,
+  ->on rerender user will hold the value of fetched data instaed of null
+  ->after getUser fetches and sets the user data"user" is longer null so
+  the component render the jsx 
+   */
     const getUser = async () => {
       const response = await fetch(`http://localhost:3001/users/${userId}`, {
         method: "GET",
@@ -37,7 +47,7 @@ import {
     if (!user) {
       return null;
     }
-  
+  //user is now the object with the properties ,we can desstruct these propertiess from the object
     const {
       firstName,
       lastName,
