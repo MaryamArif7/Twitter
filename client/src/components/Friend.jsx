@@ -32,7 +32,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         },
       }
     );
-    const data = await response.json();
+    const data = await response.json();   
     dispatch(setFriends({ friends: data }));
   };
 
@@ -43,8 +43,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         <Box
           onClick={() => {
             navigate(`/profile/${friendId}`);
-   //there is a bug when you go to user  and you go to certain person's profile and then
-  //ou try to click on somone else page , the url does update  with react router but cmp dont re render
+//ou try to click on somone else page , the url does update  with react router but cmp dont re render
     //basically it would go to user next page  then we will refresh the page thats the soultion of bug
             navigate(0);
           }}
