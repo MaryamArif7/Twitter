@@ -26,6 +26,9 @@ export const authSlice = createSlice({
       state.user = null;
       state.token = null;
     },
+    //setFriends is takin an acyion from the disptch function 
+    //If state.user exists (meaning there is a user object 
+    //in the state), it updates the friends property of the user object with the friends data received from the action's payload
     setFriends: (state, action) => {
       if (state.user) {
         state.user.friends = action.payload.friends;
