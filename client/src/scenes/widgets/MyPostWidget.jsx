@@ -24,7 +24,9 @@ import {
   import { useState } from "react";
   import { useDispatch, useSelector } from "react-redux";
   import { setPosts } from "state";
-  
+  //>this compoennt will redner first for the post related components
+  //
+  //MyPostWidet child component of index.js of homepae gettin picturepath props from there
   const MyPostWidget = ({ picturePath }) => {
     const dispatch = useDispatch();
     const [isImage, setIsImage] = useState(false);
@@ -63,6 +65,15 @@ import {
           <UserImage image={picturePath} />
           <InputBase
             placeholder="What's on your mind..."
+/*change->event ,onChange->event handlers
+->onChnange->event handler that gets triggers whenevr there is change input elemntt
+->The onChange event handler is defined inline: (e) => setPost(e.target.value). Whenever the input value changes
+ this function is called, 
+->and setPost updates the post state with the new input value.
+->e in parameters represents the event obj
+->e.target is a reference to the element that triggered the event (in this case, the input element
+->e.target.value is the current value of the input element.
+->which is automatically passed to the event handler function when an event changes */
             onChange={(e) => setPost(e.target.value)}
             value={post}
             sx={{

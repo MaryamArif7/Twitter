@@ -18,7 +18,23 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const primaryDark = palette.primary.dark;
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
-
+/*
+friends->an array containng objects 
+->each friend obj has properties includin id
+->find will find the element if it foound reurn the value if not then return the undefined
+->(friend)=>friend.id ===friendId ->a testin function provied to find()
+its taking ech element of friends as friend and checks if the id propperty of that friend object i equal to friendId
+->friend._id->the unique identifier of the current friend object in the iteration
+->friendId-> the specific ID we are searching for within the friends array.
+example:const friends = [
+  { _id: '123', name: 'Alice' },
+  { _id: '456', name: 'Bob' }
+];
+const friendId = '123'; // ID we are searching for
+1->find will iterate over the friends array
+2->for the first element ({_id:'123',name:'Alice'})
+it checks it if friend._id===friendId?if it is return the obj that will be stored in the  isFriend.
+ */
   const isFriend = friends.find((friend) => friend._id === friendId);
 
   const patchFriend = async () => {

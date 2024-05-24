@@ -11,7 +11,8 @@ import {
   import { useState } from "react";
   import { useDispatch, useSelector } from "react-redux";
   import { setPost } from "state";
-  
+  //PostWidget child component of the PostsWidget
+  //geeting belwo props from there
   const PostWidget = ({
     postId,
     postUserId,

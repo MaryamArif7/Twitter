@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import PostWidget from "./PostWidget";
-
+//-PostsWidet will render after MyPostWidget,then the child of PostsWidegt will run which is PostWidget
+//Posts widget child compoent of  homePage index .js
+//gettin id props from there
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
