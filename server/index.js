@@ -90,9 +90,10 @@ mongoose.connect(process.env.MONGO_URL,{
 /*add data one time*/
 /*User is modaal name 
 users is the data which will be inserted*/
+/*
 User.insertMany(users);
-Post.insertMany(posts);
-})
+Post.insertMany(posts); */
+}) 
 .catch((error)=>console.log(`${error} did not connect`));
 /*Th flow 
 1-> from view ->react compne ->to->index.js

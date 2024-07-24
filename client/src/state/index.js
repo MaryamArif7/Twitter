@@ -61,7 +61,7 @@ export default authSlice.reducer;
 /*------other notes-
 createSlice uses this
 Intuitive state updates: RTK integrates with the Immer library, which means you 
-can write to state without handling immutability manually
+can write to stat````   e without handling immutability manually
 the flow :
 ->user clciked on an an event 
 ->after clciking on any event ,an action is dispatched(we dispatch an action using useDispatch) which is a obj with proper. of type and payload
